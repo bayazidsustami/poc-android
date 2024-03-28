@@ -17,6 +17,7 @@ costraint-layout = { group = "androidx.constraintlayout", name = "constraintlayo
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 android-junit = { group = "androidx.test.ext", name = "junit", version.ref = "android-junit" }
 android-espresso = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
+android-gradle = { module = "com.android.tools.build:gradle", version.ref = "agp" }
 
 [bundles]
 standart = ["core-ktx", "appcompat", "costraint-layout", "material-design"]
