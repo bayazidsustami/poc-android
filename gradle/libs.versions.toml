@@ -5,15 +5,23 @@ ktx = "1.12.0"
 appcompat = "1.6.1"
 material-design = "1.11.0"
 constraint-layout = "2.1.4"
+junit = "4.13.2"
+android-junit = "1.1.5"
+espresso-core = "3.5.1"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "ktx" }
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material-design = { group = "com.google.android.material", name = "material", version.ref = "material-design" }
 costraint-layout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraint-layout" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+android-junit = { group = "androidx.test.ext", name = "junit", version.ref = "android-junit" }
+android-espresso = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
 
 [bundles]
 standart = ["core-ktx", "appcompat", "costraint-layout", "material-design"]
+unittest = ["junit"]
+instrument-test = ["android-junit", "android-espresso"]
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
