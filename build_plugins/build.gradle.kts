@@ -17,6 +17,7 @@ gradlePlugin{
         register("base-main-plugin"){
             id = "base-main-plugin"
             implementationClass = "com.example.build.plugins.AppMainPlugin"
+            version = "1.0.0"
         }
     }
 }
