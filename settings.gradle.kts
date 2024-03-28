@@ -14,7 +14,9 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "poc-android"
-include(":app")
 includeBuild("build_plugins")
+include(":app")
 include(":demoapp")
 include(":cores:core_network")
+include(":features:home:home_discover")
+include(":features:home:home_favorites")
