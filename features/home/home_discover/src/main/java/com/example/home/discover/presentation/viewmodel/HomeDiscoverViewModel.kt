@@ -7,4 +7,8 @@ import javax.inject.Inject
 class HomeDiscoverViewModel @Inject constructor(
     private val useCase: GetHomeContentUseCase
 ) : ViewModel() {
+
+    init {
+        useCase.invoke()
+    }
 }
