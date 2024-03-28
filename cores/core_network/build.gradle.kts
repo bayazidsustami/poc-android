@@ -6,14 +6,13 @@ plugins {
 
 android {
     namespace = "com.example.core.network"
+    buildFeatures {
+        buildConfig = true
+    }
 }
 
 dependencies {
+    implementation(libs.bundles.network)
 
-    implementation(libs.core.ktx)
-    implementation(libs.appcompat)
-    implementation(libs.material.design)
     testImplementation(libs.junit)
-    androidTestImplementation(libs.android.junit)
-    androidTestImplementation(libs.android.espresso)
 }

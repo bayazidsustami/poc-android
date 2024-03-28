@@ -7,11 +7,14 @@ import com.example.build.Constants
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.kotlin.dsl.dependencies
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 class AppMainPlugin: Plugin<Project> {
 
     override fun apply(target: Project) {
+
+        target.plugins.apply("org.jetbrains.kotlin.kapt")
 
         val androidExtension = target.project.extensions.getByName("android")
         if (androidExtension is BaseExtension) {
@@ -23,6 +26,12 @@ class AppMainPlugin: Plugin<Project> {
                     }
                 }
             }
+        }
+
+        val daggerVersion = "2.51"
+        target.dependencies {
+            add("implementation", "com.google.dagger:dagger:$daggerVersion")
+            add("kapt", "com.google.dagger:dagger-compiler:$daggerVersion")
         }
     }
 
@@ -57,7 +66,6 @@ class AppMainPlugin: Plugin<Project> {
                 sourceCompatibility = JavaVersion.VERSION_1_8
                 targetCompatibility = JavaVersion.VERSION_1_8
             }
-
 
         }
     }
