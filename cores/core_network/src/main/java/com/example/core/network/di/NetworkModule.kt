@@ -1,7 +1,6 @@
 package com.example.core.network.di
 
 import com.example.core.network.ApiClient
-import com.example.core.network.ApiServices
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -14,11 +13,6 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun provideApiService(retrofit: Retrofit): ApiServices {
-        return retrofit.create(ApiServices::class.java)
-    }
-
-    @Provides
     fun provideRetrofit(httpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
             .baseUrl("http://baseurl.com")
