@@ -12,6 +12,8 @@ android {
 }
 
 dependencies {
+    implementation(project(":cores:core_application"))
+
     implementation(libs.bundles.network)
 
     testImplementation(libs.junit)
