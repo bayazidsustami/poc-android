@@ -16,6 +16,8 @@ android {
 
 dependencies {
 
+    implementation(project(":features:home:home_discover"))
+
     implementation(libs.core.ktx)
     implementation(libs.appcompat)
     implementation(libs.material.design)

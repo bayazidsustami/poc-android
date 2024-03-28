@@ -3,6 +3,7 @@ package com.example.home.discover.di
 import com.example.common.coroutine.DispatcherModule
 import com.example.home.discover.data.datasource.HomeDiscoverDataSourceModule
 import com.example.home.discover.data.repository.HomeDiscoverRepositoryModule
+import com.example.home.discover.presentation.activity.HomeDiscoverActivity
 import dagger.Component
 
 @HomeDiscover
@@ -20,5 +21,7 @@ interface HomeDiscoverComponent {
     interface Factory {
         fun create(): HomeDiscoverComponent
     }
+
+    fun inject(activity: HomeDiscoverActivity)
 
 }

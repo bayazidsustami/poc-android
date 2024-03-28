@@ -1,5 +1,7 @@
 package com.example.home.discover.presentation.activity
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
@@ -18,6 +20,12 @@ class HomeDiscoverActivity : AppCompatActivity() {
 
     private val viewModel by viewModels<HomeDiscoverViewModel> { factory }
 
+    companion object {
+        fun launch(context: Context) {
+            context.startActivity(Intent(context, HomeDiscoverActivity::class.java))
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -27,5 +35,7 @@ class HomeDiscoverActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        viewModel.loadContent()
     }
 }
