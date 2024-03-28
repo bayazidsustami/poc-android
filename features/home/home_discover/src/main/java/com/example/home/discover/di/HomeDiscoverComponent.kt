@@ -13,15 +13,12 @@ import dagger.Component
         DispatcherModule::class,
         HomeDiscoverRepositoryModule::class,
     ],
-    dependencies = [
-        NetworkComponent::class
-    ]
 )
 interface HomeDiscoverComponent {
 
     @Component.Factory
     interface Factory {
-        fun create(networkComponent: NetworkComponent): HomeDiscoverComponent
+        fun create(): HomeDiscoverComponent
     }
 
 }
