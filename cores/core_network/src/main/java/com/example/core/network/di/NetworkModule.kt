@@ -1,6 +1,7 @@
 package com.example.core.network.di
 
 import com.example.core.network.ApiClient
+import com.example.core.network.BuildConfig
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -15,7 +16,7 @@ class NetworkModule {
     @Singleton
     fun provideRetrofit(httpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("http://baseurl.com")
+            .baseUrl(BuildConfig.BASE_URL)
             .client(httpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()

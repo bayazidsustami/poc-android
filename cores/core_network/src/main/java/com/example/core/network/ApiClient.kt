@@ -21,6 +21,8 @@ object ApiClient  {
                 val url = chain.request()
                     .url
                     .newBuilder()
+                    .addQueryParameter("api_key", BuildConfig.API_KEY)
+                    .addQueryParameter("language", "en-US")
                     .build()
                 val request = chain.request().newBuilder().url(url).build()
                 chain.proceed(request)
