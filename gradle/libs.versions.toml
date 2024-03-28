@@ -29,3 +29,4 @@ instrument-test = ["android-junit", "android-espresso"]
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 android-kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
