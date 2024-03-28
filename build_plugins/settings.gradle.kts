@@ -6,4 +6,4 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "build_project"
+rootProject.name = "build_plugin"
