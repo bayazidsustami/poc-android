@@ -13,6 +13,7 @@ dependencies {
     implementation(project(":cores:core_network"))
     implementation(project(":cores:core_application"))
     implementation(project(":commons:common_coroutine"))
+    implementation(project(":commons:components"))
 
     implementation(libs.core.ktx)
     implementation(libs.appcompat)
