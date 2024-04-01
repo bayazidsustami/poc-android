@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.android.kotlin)
     alias(libs.plugins.ksp)
+    id("base-main-plugin")
 }
 
 android {
