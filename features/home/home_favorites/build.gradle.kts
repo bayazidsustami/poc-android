@@ -10,6 +10,8 @@ android {
 
 dependencies {
 
+    implementation(project(":cores:datasource_local"))
+
     implementation(libs.core.ktx)
     implementation(libs.appcompat)
     implementation(libs.material.design)
