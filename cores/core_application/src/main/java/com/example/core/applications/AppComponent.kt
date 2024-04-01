@@ -1,19 +1,16 @@
 package com.example.core.applications
 
-import android.app.Application
+import android.content.Context
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [AppModule::class])
+@Component
 interface AppComponent {
 
-    @Component.Builder
-    interface Builder{
-        fun build(): AppComponent
-
-        @BindsInstance
-        fun application(application: Application): Builder
+    @Component.Factory
+    interface Factory{
+        fun create(@BindsInstance context: Context): AppComponent
     }
 }
