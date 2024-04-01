@@ -23,7 +23,7 @@ class MovieFavoriteActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         DaggerHomeFavoriteComponent.factory()
-            .create(coreComponent())
+            .create(coreComponent(), this)
             .inject(this)
         enableEdgeToEdge()
         setContentView(R.layout.activity_movie_favorite)

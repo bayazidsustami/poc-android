@@ -4,9 +4,10 @@
     <application>
         <activity
             android:name=".presentation.activity.MovieFavoriteActivity"
-            android:exported="false"
+            android:exported="true"
             android:label="@string/movie_favorite">
             <intent-filter android:label="@string/movie_favorite">
+                <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <!--URL : example://movies/movie-discover-->
