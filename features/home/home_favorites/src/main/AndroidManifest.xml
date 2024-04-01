@@ -4,7 +4,18 @@
     <application>
         <activity
             android:name=".presentation.activity.MovieFavoriteActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/movie_favorite">
+            <intent-filter android:label="@string/movie_favorite">
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!--URL : example://movies/movie-discover-->
+                <data
+                    android:scheme="example"
+                    android:host="movies"
+                    android:path="@string/movie_favorite_path"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

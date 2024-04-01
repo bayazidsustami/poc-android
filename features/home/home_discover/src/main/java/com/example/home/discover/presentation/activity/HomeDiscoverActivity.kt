@@ -2,10 +2,12 @@ package com.example.home.discover.presentation.activity
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
@@ -21,7 +23,6 @@ class HomeDiscoverActivity : AppCompatActivity() {
     lateinit var factory: ViewModelProvider.Factory
 
     private val viewModel by viewModels<HomeDiscoverViewModel> { factory }
-
 
     companion object {
         fun launch(context: Context) {
@@ -40,6 +41,10 @@ class HomeDiscoverActivity : AppCompatActivity() {
             insets
         }
         viewModel.loadContent()
+
+        findViewById<AppCompatTextView>(R.id.tv_click).setOnClickListener {
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("example://movies/movie-favorite")))
+        }
     }
 
     private fun inject() {

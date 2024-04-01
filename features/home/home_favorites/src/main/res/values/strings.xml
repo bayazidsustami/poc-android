@@ -1,1 +1,4 @@
-<resources></resources>
+<resources>
+    <string name="movie_favorite">Movie Favorite</string>
+    <string name="movie_favorite_path">/movie-favorite</string>
+</resources>
