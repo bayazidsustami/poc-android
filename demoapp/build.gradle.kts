@@ -17,6 +17,7 @@ android {
 dependencies {
 
     implementation(project(":features:home:home_discover"))
+    implementation(project(":cores:core_application"))
 
     implementation(libs.core.ktx)
     implementation(libs.appcompat)

@@ -2,8 +2,8 @@ package com.example.commons.components.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import dagger.internal.Provider
 import javax.inject.Inject
+import javax.inject.Provider
 
 class ViewModelFactory @Inject constructor(
     private val creators: Map<Class<out ViewModel>, @JvmSuppressWildcards Provider<ViewModel>>

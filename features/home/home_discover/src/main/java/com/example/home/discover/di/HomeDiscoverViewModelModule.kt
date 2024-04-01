@@ -15,10 +15,10 @@ abstract class HomeDiscoverViewModelModule {
     @Binds
     @IntoMap
     @ViewModelKey(HomeDiscoverViewModel::class)
-    abstract fun bindHomeDiscoverViewModel(viewModel: HomeDiscoverViewModel): ViewModel
-
+    internal abstract fun bindHomeDiscoverViewModel(viewModel: HomeDiscoverViewModel): ViewModel
 
     @Binds
-    abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory
+    @HomeDiscover
+    internal abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory
 
 }

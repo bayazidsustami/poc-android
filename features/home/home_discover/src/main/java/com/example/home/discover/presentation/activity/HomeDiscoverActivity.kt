@@ -8,17 +8,20 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.commons.components.viewmodel.ViewModelFactory
+import androidx.lifecycle.ViewModelProvider
+import com.example.core.applications.coreComponent
 import com.example.home.discover.R
+import com.example.home.discover.di.DaggerHomeDiscoverComponent
 import com.example.home.discover.presentation.viewmodel.HomeDiscoverViewModel
 import javax.inject.Inject
 
 class HomeDiscoverActivity : AppCompatActivity() {
 
     @Inject
-    lateinit var factory: ViewModelFactory
+    lateinit var factory: ViewModelProvider.Factory
 
     private val viewModel by viewModels<HomeDiscoverViewModel> { factory }
+
 
     companion object {
         fun launch(context: Context) {
@@ -28,6 +31,7 @@ class HomeDiscoverActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        inject()
         enableEdgeToEdge()
         setContentView(R.layout.activity_home_discover)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -35,7 +39,12 @@ class HomeDiscoverActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
         viewModel.loadContent()
+    }
+
+    private fun inject() {
+        DaggerHomeDiscoverComponent.factory()
+            .create(coreComponent())
+            .inject(this)
     }
 }

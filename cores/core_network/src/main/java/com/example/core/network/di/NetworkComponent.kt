@@ -1,10 +1,11 @@
 package com.example.core.network.di
 
-import com.example.core.applications.AppModule
 import dagger.Component
 
 @Component(
-    modules = [NetworkModule::class, AppModule::class])
+    modules = [NetworkModule::class],
+)
+@NetworkScope
 interface NetworkComponent {
     @Component.Factory
     interface Factory{

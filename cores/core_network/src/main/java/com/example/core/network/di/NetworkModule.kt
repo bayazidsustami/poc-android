@@ -13,7 +13,6 @@ import javax.inject.Singleton
 class NetworkModule {
 
     @Provides
-    @Singleton
     fun provideRetrofit(httpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
             .baseUrl(BuildConfig.BASE_URL)
