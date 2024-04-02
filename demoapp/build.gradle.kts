@@ -17,7 +17,7 @@ android {
 dependencies {
 
     implementation(project(":features:home:home_discover"))
-    implementation(project(":features:home:home_favorites"))
+    //implementation(project(":features:home:home_favorites"))
     implementation(project(":cores:core_application"))
 
     implementation(libs.core.ktx)

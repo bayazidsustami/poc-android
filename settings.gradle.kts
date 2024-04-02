@@ -15,12 +15,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "poc-android"
 includeBuild("build_plugins")
-include(":app")
-include(":demoapp")
-include(":cores:core_network")
-include(":features:home:home_discover")
-include(":features:home:home_favorites")
-include(":commons:components")
-include(":cores:core_application")
-include(":commons:common_coroutine")
-include(":cores:datasource_local")
+//apply(from = "./build_config/build_main_config.gradle")
+apply(from = "./build_config/build_home_discover_feature.gradle")
+//apply(from = "./build_config/build_home_favorite_feature.gradle")
