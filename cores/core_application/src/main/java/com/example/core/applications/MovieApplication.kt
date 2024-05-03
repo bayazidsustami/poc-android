@@ -4,7 +4,7 @@ import android.app.Activity
 import android.app.Application
 import android.content.Context
 
-class MovieApplication: Application() {
+open class MovieApplication: Application() {
 
     private val appComponent: AppComponent by lazy {
         DaggerAppComponent.factory().create(this)
