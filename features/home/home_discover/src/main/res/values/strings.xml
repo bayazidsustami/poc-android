@@ -1,0 +1,4 @@
+<resources>
+    <string name="movie_discover">Movie Discover</string>
+    <string name="movie_discover_path">/movie-discover</string>
+</resources>

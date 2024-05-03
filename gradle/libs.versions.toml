@@ -1,0 +1,50 @@
+[versions]
+agp = "8.2.2"
+kotlin = "1.9.22"
+ktx = "1.12.0"
+appcompat = "1.6.1"
+material-design = "1.11.0"
+constraint-layout = "2.1.4"
+junit = "4.13.2"
+android-junit = "1.1.5"
+espresso-core = "3.5.1"
+activity = "1.8.2"
+retrofit = "2.9.0"
+logging-interceptor = "4.10.0"
+coroutine-android = "1.7.3"
+room = "2.6.1"
+ksp = "1.9.22-1.0.17"
+
+
+[libraries]
+core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "ktx" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material-design = { group = "com.google.android.material", name = "material", version.ref = "material-design" }
+costraint-layout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraint-layout" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+android-junit = { group = "androidx.test.ext", name = "junit", version.ref = "android-junit" }
+android-espresso = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
+android-gradle = { module = "com.android.tools.build:gradle", version.ref = "agp" }
+activity = { group = "androidx.activity", name = "activity-ktx", version.ref = "activity" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
+logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "logging-interceptor" }
+android-coroutine = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutine-android" }
+room = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+
+
+[bundles]
+standart = ["core-ktx", "appcompat", "costraint-layout", "material-design"]
+unittest = ["junit"]
+instrument-test = ["android-junit", "android-espresso"]
+network = ["retrofit", "converter-gson", "logging-interceptor"]
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }

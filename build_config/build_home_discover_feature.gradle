@@ -1,0 +1,6 @@
+include(":demoapp")
+include(":cores:core_network")
+include(":features:home:home_discover")
+include(":commons:components")
+include(":cores:core_application")
+include(":commons:common_coroutine")

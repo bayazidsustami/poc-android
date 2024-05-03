@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application>
+        <activity
+            android:name=".presentation.activity.HomeDiscoverActivity"
+            android:exported="false"
+            android:label="@string/movie_discover">
+            <intent-filter android:label="@string/movie_discover">
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!--URL : example://movies/movie-discover-->
+                <data
+                    android:scheme="example"
+                    android:host="movies"
+                    android:path="@string/movie_discover_path"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
