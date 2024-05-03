@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -15,7 +14,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import com.example.core.applications.coreComponent
+import com.example.commons.components.activity.BaseActivity
 import com.example.home.discover.R
 import com.example.home.discover.di.DaggerHomeDiscoverComponent
 import com.example.home.discover.presentation.viewmodel.HomeDiscoverViewModel
@@ -23,7 +22,7 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class HomeDiscoverActivity : AppCompatActivity() {
+class HomeDiscoverActivity : BaseActivity() {
 
     @Inject
     lateinit var factory: ViewModelProvider.Factory
@@ -38,7 +37,6 @@ class HomeDiscoverActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        inject()
         enableEdgeToEdge()
         setContentView(R.layout.activity_home_discover)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -55,9 +53,9 @@ class HomeDiscoverActivity : AppCompatActivity() {
         populateData()
     }
 
-    private fun inject() {
+    override fun injectComponent() {
         DaggerHomeDiscoverComponent.factory()
-            .create(coreComponent())
+            .create(getActivityComponent())
             .inject(this)
     }
 
