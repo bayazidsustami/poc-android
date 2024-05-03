@@ -7,13 +7,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
+import com.example.commons.components.activity.BaseActivity
 import com.example.core.applications.coreComponent
 import com.example.home.favorites.R
 import com.example.home.favorites.di.DaggerHomeFavoriteComponent
 import com.example.home.favorites.presentation.viewmodel.MovieFavoriteViewModel
 import javax.inject.Inject
 
-class MovieFavoriteActivity : AppCompatActivity() {
+class MovieFavoriteActivity : BaseActivity() {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
@@ -22,9 +23,7 @@ class MovieFavoriteActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        DaggerHomeFavoriteComponent.factory()
-            .create(coreComponent(), this)
-            .inject(this)
+
         enableEdgeToEdge()
         setContentView(R.layout.activity_movie_favorite)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -33,5 +32,11 @@ class MovieFavoriteActivity : AppCompatActivity() {
             insets
         }
         viewModel.getFavMovie()
+    }
+
+    override fun injectComponent() {
+        DaggerHomeFavoriteComponent.factory()
+            .create(getActivityComponent(), this)
+            .inject(this)
     }
 }
